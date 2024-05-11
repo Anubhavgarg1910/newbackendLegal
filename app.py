@@ -52,15 +52,14 @@ def post_time_test():
 
 def post_assist_data():
     if request.method == 'POST':
-        data = request.json
-        processed_data = process_data(data)
-        return jsonify(processed_data)
+        a_data = request.json
+        assistant_data = process_assist_data(a_data)
+        return jsonify(assistant_data)
     elif request.method == 'GET':
-
         return jsonify({'message': 'This is a GET request'})
 
-def process_data(data):
-    user_query = data.get('query', '')  
+def process_assist_data(a_data):
+    user_query = a_data.get('query', '')  
     response = legal_assistant(user_query)
     return {
         'response': response,

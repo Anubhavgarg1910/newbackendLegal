@@ -58,8 +58,8 @@ def legal_assistant(query):
     for pattern, response in patterns.items():
         if re.search(pattern, query, re.IGNORECASE):
             return response
-
-    return "I'm sorry, I'm not sure how to answer that legal question.I am still learning. Maybe, we can try with another Question :)"
+        else:
+            return "I'm sorry, I'm not sure how to answer that legal question.I am still learning. Maybe, we can try with another Question :)"
 
 # if __name__ == "__main__":
 #     print("Legal Assistant: Hello! I'm a legal assistant. What legal term do you want to know about?")
